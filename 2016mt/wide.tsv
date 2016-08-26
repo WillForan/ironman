@@ -1,4 +1,4 @@
-bib	div	loc	country	prof	swim.dist	swim.split	swim.race	swim.pace	swim.drank	swim.grank	swim.orank	run.dist	run.split	run.race	run.pace	run.drank	run.grank	run.orank	bike.dist	bike.split	bike.race	bike.pace	bike.drank	bike.grank	bike.orank	t1	t2
+bib	div	loc	country	prof	swim.dist	swim.split	swim.race	swim.pace	swim.drank	swim.grank	swim.orank	bike.dist	bike.split	bike.race	bike.pace	bike.drank	bike.grank	bike.orank	run.dist	run.split	run.race	run.pace	run.drank	run.grank	run.orank	t1	t2
 1	MPRO	Thousand Oaks CA	USA	Professional Triathlete	3.8 km	58:59	58:59	1:33/100m	8	31	36	180 km	4:30:35	5:33:07	39.91 km/h	2	2	2	42.195 km	2:54:53	8:29:57	4:08/km	2	2	2	3:33	1:57
 2	MPRO	Nice	FRA	Professional Triathlete	3.8 km	55:28	55:28	1:27/100m	3	12	13	180 km	4:30:33	5:29:16	39.92 km/h	1	1	1	42.195 km	--:--	--:--	--/km	--	--	--	3:15	2:08
 3	MPRO	Ogdensburg NY	USA	Professional Triathlete	3.8 km	1:02:40	1:02:40	1:38/100m	10	73	91	180 km	--:--	--:--	-- km/h	--	--	--	42.195 km	--:--	--:--	--/km	--	--	--	4:15	--:--

@@ -22,7 +22,7 @@ my @infoh=qw/bib div loc country prof/;
 my @sumh=qw/dist split race pace drank grank orank/;
 my @sumhh;
 sub addpre($pre,@a) { map { "$pre.$_"} @a }
-push @sumhh, addpre($_,@sumh) for qw/swim run bike/;
+push @sumhh, addpre($_,@sumh) for qw/swim bike run/;
 # transition
 my @tth = qw/t1 t2/;
 
