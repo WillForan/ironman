@@ -23,7 +23,8 @@ sub page {
 
 # bib page
 sub biburl {
- return("http://www.ironman.com/triathlon/events/americas/ironman/mont-tremblant/results.aspx?rd=$date&race=monttremblant&bidid=$_[0]&detail=1")
+ my $id=shift;
+ return("http://www.ironman.com/triathlon/events/americas/ironman/mont-tremblant/results.aspx?rd=$date&race=monttremblant&bidid=$id&detail=1")
 
 }
 
@@ -35,9 +36,11 @@ sub athinfo {
  my @vals = map {$vals->[$_]} grep {$_ & 1} 1..$vals->size;
 
  say STDERR "not 12 elements in: @vals" if $#vals != 12;
- return 1 if $vals[0] eq "";
+ return 1 if join("",@vals) eq "";
  
  say join "\t", @vals;
+ sleep .5;
+ return 0;
 }
 
 sub getAthls {
@@ -72,13 +75,13 @@ sub getAthls {
 
 
 
-my $cnt=1;
+my $cnt=2684;
 
 # get all of a division
 # $cnt++ while(getAthls($cnt));
 
 # get all by bib
-say join( "\t", qw/Division    Age     State   Country Profession  Points  Swim  Bike  Run  Overall T1   T2/);
+say join( "\t", qw/Bib Division    Age     State   Country Profession  Points  Swim  Bike  Run  Overall T1   T2/);
 $cnt++ while(athinfo(biburl($cnt)));
 
 exit;

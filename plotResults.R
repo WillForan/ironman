@@ -47,4 +47,23 @@ plotResults('WFage.tsv','30-34')
 # ./getResults.pl 18-24 |sed 's/^Name\t//;s/^\t//'>  SEage.tsv 
 plotResults('SEage.tsv','18-24')
 
-# ./getResults.pl |sed 's/^Name\t//;s/^\t//'>  all.tsv 
+a <- rbind(
+ read.table('allFemale.tsv',sep="\t",header=T) %>% mutate(Sex='F'),
+ read.table('allMale.tsv',sep="\t",header=T) %>% mutate(Sex='M')
+) %>% arrange(Overall.Rank)
+
+a.long <- a %>% select(Div.Rank,Swim,Bike,Run,Finish,Sex) %>% 
+    filter(Div.Rank!='---') %>%
+    mutate(Div.Rank=as.numeric(as.character(Div.Rank)),
+           Overall.Rank=as.numeric(as.character(Div.Rank))) %>%
+    gather('Part','Time',-Div.Rank,-Overall.Rank,-Sex) %>%
+    mutate(Time=hms(Time),
+           Dur=as.numeric(as.duration(Time))/(60*60),
+           PerField = Div.Rank/max(Div.Rank) )
+
+p.a <-
+ ggplot(a.long %>% filter(Part=='Finish')) + 
+ aes(y=Overall.Rank,x=Dur,color=Sex)+
+ geom_point()
+
+print(p.a)
